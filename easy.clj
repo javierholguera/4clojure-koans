@@ -13,8 +13,12 @@
 
 
 ;; Exerc 34 -
+(def sol-34
+  (fn [from to]
+    (take-while #(< % to) (iterate inc from))))
 
 ;; Exerc 28
+ 
 
 ;; Exerc 39 - Interleave two seqs
 (def sol-39
@@ -24,6 +28,28 @@
 (def sol-47
   4)
 
+;; def 40 - interpose a seq
+(def sol-40
+  (fn [pad coll]
+    (-> coll
+        (interleave (repeat pad))
+        drop-last)))
+
+;; def 49 - split a sequence
+(def sol-49
+  (juxt take drop))
+
+;; def 61 - map construction
+(def sol-61
+  (fn [coll1 coll2]
+    (apply sorted-map (interleave coll1 coll2))))
+
+;; def 81 - set intersection
+(def sol-81
+  (fn [s1 s2]
+    (set (filter s1 s2))))
+
+  
 
 
 
